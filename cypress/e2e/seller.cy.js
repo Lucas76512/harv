@@ -1,17 +1,16 @@
 describe('Tests', () => {
     beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
     it.only('fills the from and submits it', () => {
-
         cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
 
         cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
 
         cy.get('input[name="commercial_phone"]').as('commercial_phone').type('18988241771')  
-        cy.get('input[name="document"]').as('document').type('29.013.277/0001-30')  
+        cy.get('input[name="document"]').as('document').type('54.925.830/0001-59')  
         cy.get('input[name="corporate_name"]').as('corporate_name').type('Exemplo Brasil LTDA', {force: true})
-        cy.get('input[name="email"]').as('email').type('nikolassanntoss+1@icloud.com')
-        cy.get('input[name="confirm_email"]').as('confirm_email').type('nikolassanntoss+1@icloud.com')
+        cy.get('input[name="email"]').as('email').type('lucas+6@buildbox.com.br')
+        cy.get('input[name="confirm_email"]').as('confirm_email').type('lucas+6@buildbox.com.br')
         cy.get('input[name="store_name"]').as('store_name').type('teste')
         cy.get('textarea[name="store_bio"]').type('Segunda a Sexta 05:00 até 17:00')
         cy.get('input[name="cep"]').as('cep').type('13049-024')
@@ -44,20 +43,18 @@ describe('Tests', () => {
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
         cy.get('input[name="first_name"]').as('first_name').type('Pedro')
         cy.get('input[name="last_name"]').as('last_name').type('Henrique')
-        cy.get('input[name="cpf"]').as('cpf').type('920.244.500-16')
+        cy.get('input[name="cpf"]').as('cpf').type('505.208.420-06')
         cy.get('input[name="phone"]').as('phone').type('4523462354')
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
-        cy.url()
-        .should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
+        
+        cy.url().should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
+        cy.contains('span','Seller cadastrado com sucesso!').should('be.visible')
 
     })
-})
 
-describe('EMAIL', () => {
-    beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
-    it.only('fills the from and submits it', () => {
+    it.only('EMAIL test', () => {
 
         cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
 
@@ -106,15 +103,11 @@ describe('EMAIL', () => {
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
-        cy.url()
-        .should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
+        
+        cy.get('.foo').should('not.exist')
 
     })
-})
-
-describe('CPF', () => {
-    beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
-    it.only('fills the from and submits it', () => {
+    it.only('CPF test', () => {
 
         cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
 
@@ -163,15 +156,11 @@ describe('CPF', () => {
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
-        cy.url()
-        .should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
+        
+        cy.get('.foo').should('not.exist')
 
     })
-})
-
-describe('CNPJ', () => {
-    beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
-    it.only('fills the from and submits it', () => {
+    it.only('CNPJ test', () => {
 
         cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
 
@@ -220,15 +209,12 @@ describe('CNPJ', () => {
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
-        cy.url()
-        .should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
+        
+        cy.get('.foo').should('not.exist')
 
-    })
-})
-
-describe('Obrigatoriedade do Campo ', () => {
-    beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
-    it.only('fills the from and submits it', () => {
+    })  
+    
+    it.only('Obrigatoriedade do campo', () => {
 
         cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
 
@@ -277,8 +263,7 @@ describe('Obrigatoriedade do Campo ', () => {
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
-        cy.url()
-        .should('be.equal', 'https://harv.buildbox.one/#/seller/success-registration')
-
+        
+        cy.get('.foo').should('not.exist')
     })
 })
