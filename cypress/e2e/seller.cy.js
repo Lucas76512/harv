@@ -7,10 +7,10 @@ describe('Tests', () => {
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
 
         cy.get('input[name="commercial_phone"]').as('commercial_phone').type('18988241771')  
-        cy.get('input[name="document"]').as('document').type('29.109.344/0001-15')
+        cy.get('input[name="document"]').as('document').type('84.962.190/0001-18')
         cy.get('input[name="corporate_name"]').as('corporate_name').type('Exemplo Brasil LTDA', {force: true})
-        cy.get('input[name="email"]').as('email').type('lucas+7@buildbox.com.br')
-        cy.get('input[name="confirm_email"]').as('confirm_email').type('lucas+7@buildbox.com.br')
+        cy.get('input[name="email"]').as('email').type('lucas+22@buildbox.com.br')
+        cy.get('input[name="confirm_email"]').as('confirm_email').type('lucas+22@buildbox.com.br')
         cy.get('input[name="store_name"]').as('store_name').type('teste')
         cy.get('textarea[name="store_bio"]').type('Segunda a Sexta 05:00 até 17:00')
         cy.get('input[name="cep"]').as('cep').type('13049-024')
@@ -43,7 +43,7 @@ describe('Tests', () => {
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
         cy.get('input[name="first_name"]').as('first_name').type('Pedro')
         cy.get('input[name="last_name"]').as('last_name').type('Henrique')
-        cy.get('input[name="cpf"]').as('cpf').type('569.306.390-95')
+        cy.get('input[name="cpf"]').as('cpf').type('473.823.940-69')
         cy.get('input[name="phone"]').as('phone').type('4523462354')
         cy.get('input[name="password"]').as('password').type('Teste321#')
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
@@ -264,6 +264,5 @@ describe('Tests', () => {
         cy.get('input[name="confirm_password"]').as('confirm_password').type('Teste321#')
         cy.get('.sc-TRNrF > .MuiButtonBase-root').click()
         
-        cy.get('.foo').should('not.exist')
     })
 })

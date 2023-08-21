@@ -18,6 +18,9 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
+            cy.get('input[name="start_Date"]').type('2023-08-21')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
+
             cy.get('.sc-edUIhV > .sc-bjuIDw').as('frete').click()
             cy.get(':nth-child(20) > .sc-kItwNn > .sc-bSakgD > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
             cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
@@ -49,7 +52,8 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
-
+            cy.get('input[name="start_Date"]').type('2023-08-21')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
 
             cy.get(':nth-child(21) > .sc-cUEIKg > .sc-bTmccw').as('entrega programada').click()
             cy.get('.sc-kItwNn > .sc-bSakgD > .haOJaf > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
@@ -85,8 +89,8 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
-            cy.get('input[name="start_Date"]').type('2023-08-17')
-            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-20')
+            cy.get('input[name="start_Date"]').type('2023-08-21')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
             cy.get('.sc-egNfGp > .sc-bSakgD > :nth-child(2) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
             cy.get('.MuiAutocomplete-popper li[data-option-index="12"]').click();
             
@@ -95,11 +99,6 @@ describe('Cadastro produto  ', () => {
             cy.get('.sc-edUIhV > .sc-bjuIDw').as('frete').click()
             cy.get(':nth-child(20) > .sc-kItwNn > .sc-bSakgD > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
             cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
-
-            cy.get('input[name="start_Date"]').type('2023-08-20')
-            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-23') 
-        
-        
 
             cy.get('.sc-gDeeJ > .MuiButtonBase-root').click();
         
@@ -126,8 +125,8 @@ it.only('redirecionamento para tela de listagem de produtos com entrega programa
     cy.get('input[name="quantity"]').as('quantity').type('1')
     cy.get('input[name="price"]').as('price').type('15')
     cy.get('input[name="discount"]').as('discount').type('10')
-    cy.get('input[name="start_Date"]').type('2023-08-17')
-    cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-20')
+    cy.get('input[name="start_Date"]').type('2023-08-21')
+    cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
     cy.get('.sc-egNfGp > .sc-bSakgD > :nth-child(2) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     cy.get('.MuiAutocomplete-popper li[data-option-index="12"]').click();
     
@@ -138,8 +137,6 @@ it.only('redirecionamento para tela de listagem de produtos com entrega programa
     cy.get(':nth-child(21) > .sc-cUEIKg > .sc-bTmccw').as('entrega programada').click()
     cy.get('.sc-kItwNn > .sc-bSakgD > .haOJaf > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
-    cy.get('input[name="start_Date"]').type('2023-08-20')
-    cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-23') 
 
 
     cy.get('.sc-kItwNn > .sc-bSakgD > :nth-child(2) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
