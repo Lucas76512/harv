@@ -1,6 +1,6 @@
 describe('Cadastro produto  ', () => {
     beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create/product'))
-        it.only('fills the from and submits it', () => {
+        it('fills the from and submits it', () => {
            
             cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
             cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
@@ -18,8 +18,8 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
-            cy.get('input[name="start_Date"]').type('2023-08-21')
-            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
+            cy.get('input[name="start_Date"]').type('2023-08-27')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-30')
 
             cy.get('.sc-edUIhV > .sc-bjuIDw').as('frete').click()
             cy.get(':nth-child(20) > .sc-kItwNn > .sc-bSakgD > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
@@ -28,13 +28,14 @@ describe('Cadastro produto  ', () => {
 
             cy.get('.sc-gDeeJ > .MuiButtonBase-root').click();
             
-            cy.url().should('be.equal', 'https://harv.buildbox.one/#/seller/products');
+            cy.url().should('be.equal', 'https://harv.buildbox.one/#/seller/products')
+
             cy.contains('span','Produto Cadastrado!').should('be.visible')
 
 
         })
 
-        it.only('Cadastro de produto com entrega programada', () => {
+        it('Cadastro de produto com entrega programada', () => {
            
             cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
             cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
@@ -52,8 +53,8 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
-            cy.get('input[name="start_Date"]').type('2023-08-21')
-            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
+            cy.get('input[name="start_Date"]').type('2023-08-27')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-30')
 
             cy.get(':nth-child(21) > .sc-cUEIKg > .sc-bTmccw').as('entrega programada').click()
             cy.get('.sc-kItwNn > .sc-bSakgD > .haOJaf > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
@@ -71,7 +72,7 @@ describe('Cadastro produto  ', () => {
 
 
         })
-        it.only('redirecionamento para tela de listagem de produtos ', () => {
+        it('redirecionamento para tela de listagem de produtos ', () => {
            
             cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
             cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
@@ -89,8 +90,8 @@ describe('Cadastro produto  ', () => {
             cy.get('input[name="quantity"]').as('quantity').type('1')
             cy.get('input[name="price"]').as('price').type('15')
             cy.get('input[name="discount"]').as('discount').type('10')
-            cy.get('input[name="start_Date"]').type('2023-08-21')
-            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
+            cy.get('input[name="start_Date"]').type('2023-08-27')
+            cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-30')
             cy.get('.sc-egNfGp > .sc-bSakgD > :nth-child(2) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
             cy.get('.MuiAutocomplete-popper li[data-option-index="12"]').click();
             
@@ -107,7 +108,7 @@ describe('Cadastro produto  ', () => {
       
 })
 
-it.only('redirecionamento para tela de listagem de produtos com entrega programada ', () => {
+    it('redirecionamento para tela de listagem de produtos com entrega programada ', () => {
            
     cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
     cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
@@ -125,8 +126,8 @@ it.only('redirecionamento para tela de listagem de produtos com entrega programa
     cy.get('input[name="quantity"]').as('quantity').type('1')
     cy.get('input[name="price"]').as('price').type('15')
     cy.get('input[name="discount"]').as('discount').type('10')
-    cy.get('input[name="start_Date"]').type('2023-08-21')
-    cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-24')
+    cy.get('input[name="start_Date"]').type('2023-08-27')
+    cy.get('input[name="end_Date"]').invoke('removeAttr', 'disabled').type('2023-08-30')
     cy.get('.sc-egNfGp > .sc-bSakgD > :nth-child(2) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
     cy.get('.MuiAutocomplete-popper li[data-option-index="12"]').click();
     
@@ -154,7 +155,7 @@ it.only('redirecionamento para tela de listagem de produtos com entrega programa
 
 describe('Cadastro de serviço', () => {
     beforeEach(() => cy.visit('https://harv.buildbox.one/#/login'))
-        it.only('fills the from and submits it', () => {
+        it('fills the from and submits it', () => {
             
             cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
             cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
@@ -175,7 +176,7 @@ describe('Cadastro de serviço', () => {
             cy.contains('span', 'Anúncio/Serviço Cadastrado!').should('be.visible')
     })
 
-    it.only('redirecionamento para tela de listagem de produtos', () => {
+    it('redirecionamento para tela de listagem de produtos', () => {
             
         cy.get(':nth-child(2) > .sc-idiyUo > .sc-kgflAQ').type('nikolas@buildbox.com.br')
         cy.get(':nth-child(3) > .sc-idiyUo > .sc-kgflAQ').type('Teste321#')
