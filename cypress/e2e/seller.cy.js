@@ -25,7 +25,7 @@ describe('Tests', () => {
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
 
         cy.get(':nth-child(3) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
-        cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
+        cy.get('.Mu iAutocomplete-popper li[data-option-index="0"]').click();
 
         cy.get(':nth-child(4) > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
