@@ -1,11 +1,12 @@
 describe('Login', () => {
   beforeEach(() => cy.visit('https://harv.buildbox.one/#/login'))
     it("login", () => {
+
     cy.text('nikolas@buildbox.com.br')
 
-    cy.get('input[name="password"]').as('password').type('Teste321#')
+    cy.password('Teste321#')
 
-    cy.get('button[label="Entrar"]').click()
+    cy.button('button[label="Entrar"]')
 
     cy.url()
     .should('be.equal', 'https://harv.buildbox.one/#/seller/products')
@@ -14,29 +15,27 @@ describe('Login', () => {
 
     it('login invalido ', () => {
         cy.visit('https://harv.buildbox.one/#/login')
-        cy.get('input[name="email"]').as('email').type('teste@gmail.com')
-        cy.get('input[name="password"]').as('password').type('4534563453')
+        cy.text('teste@gmail.com')
+        cy.password('4534563453')
 
-        cy.get('button[label="Entrar"]').click()
+        cy.button('button[label="Entrar"]')
+        
         cy.contains('span','Usuário ou Senha inválido(s).').should('be.visible')
     })
 
-})
-
+}) 
 
 describe('Redefinir senha', () => {
-    beforeEach(() => cy.visit('https://harv.buildbox.one/#/login'))
+    beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/reset-password'))
         it('Redefinir senha com email valido', () => {
-            cy.get('.sc-iwoqQi').click()
-            cy.get('input[name="email"]').as('email').type('lucas@buildbox.com.br')
-            cy.get('button[label="Enviar"]').click()
+            cy.text('lucas@buildbox.com.br')
+            cy.send('button[label="Enviar"]')
             cy.contains('span','Um link de verificação foi enviado para o e-mail informado').should('be.visible')
         })
         
         it('Redefinir senha com email invalido', () => {
-            cy.get('.sc-iwoqQi').click()
-            cy.get('input[name="email"]').as('email').type('teste@gmail.com')
-            cy.get('button[label="Enviar"]').click()
+            cy.text('teste@gmail.com')
+            cy.send('button[label="Enviar"]')
             cy.contains('span','Usuário não encontrado.').should('be.visible')
             cy.contains('span','Erro ao enviar e-mail').should('be.visible')
         })

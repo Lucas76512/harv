@@ -1,12 +1,12 @@
 describe('Tests', () => {
     beforeEach(() => cy.visit('https://harv.buildbox.one/#/seller/create-seller'))
-      it('fills the from and submits it', () => {
-        cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
+      it('Cadastro', () => {
+        cy.get('input[name="photo"]').selectFile('cypress/fixtures/sorvete.jpg', { force: true })
 
-        cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
+        cy.get(':nth-child(4) > .sc-bWXABl > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
 
-        cy.get('input[name="commercial_phone"]').as('commercial_phone').type('18988241771')  
+        cy.text('18988241771')  
         cy.get('input[name="document"]').as('document').type('24.184.157/0001-82')
         cy.get('input[name="corporate_name"]').as('corporate_name').type('Exemplo Brasil LTDA', {force: true})
         cy.get('input[name="email"]').as('email').type('lucas+23@buildbox.com.br')
@@ -56,7 +56,7 @@ describe('Tests', () => {
 
     it('EMAIL test', () => {
 
-        cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
+        cy.get('input[name="photo"]').selectFile('cypress/fixtures/sorvete.jpg', { force: true })
 
         cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
@@ -109,7 +109,7 @@ describe('Tests', () => {
     })
     it('CPF test', () => {
 
-        cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
+        cy.get('input[name="photo"]').selectFile('cypress/fixtures/sorvete.jpg', { force: true })
 
         cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
@@ -162,7 +162,7 @@ describe('Tests', () => {
     })
     it('CNPJ test', () => {
 
-        cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
+        cy.get('input[name="photo"]').selectFile('cypress/fixtures/sorvete.jpg', { force: true })
 
         cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();
@@ -216,7 +216,7 @@ describe('Tests', () => {
     
     it('Obrigatoriedade do campo', () => {
 
-        cy.get('input[name="photo"]').selectFile('cypress/e2e/fixtures/sorvete.jpg', { force: true })
+        cy.get('input[name="photo"]').selectFile('cypress/fixtures/sorvete.jpg', { force: true })
 
         cy.get(':nth-child(4) > .sc-jQHtVU > .MuiAutocomplete-root > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.get('.MuiAutocomplete-popper li[data-option-index="0"]').click();

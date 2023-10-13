@@ -1,5 +1,21 @@
 import 'cypress-file-upload' 
 
+Cypress.Commands.add('text', (term) => {
+  cy.get('input[type="text"]').type(term);
+})
+
+Cypress.Commands.add('password', (term) => {
+  cy.get('input[type="password"]').type(term);
+})
+
+Cypress.Commands.add('button',  (term) => {
+  cy.get('button[type="submit"]').type(term).click();
+})
+
+Cypress.Commands.add('send',  (term) => {
+  cy.get('button[type="button"]').type(term).click();
+})
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
